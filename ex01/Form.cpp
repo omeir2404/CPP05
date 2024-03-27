@@ -67,7 +67,7 @@ void Form::beSigned(Bureaucrat &bureaucrat)
     if (bureaucrat.getGrade() <= gradeToSign)
     {
         isSigned = true;
-        std::cout << bureaucrat.getName() << " signed " << name << std::endl;
+        //std::cout << bureaucrat.getName() << " signed " << name << std::endl;//is printed by calling function(signForm)
     }
     else
     {

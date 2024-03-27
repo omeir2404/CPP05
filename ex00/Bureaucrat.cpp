@@ -2,7 +2,7 @@
 
 Bureaucrat::Bureaucrat()
 {
-    std::cout << "Bureaucrat default constructor THIS SHOULD NOT BE CALLED\n";
+    std::cout << "Bureaucrat default constructor ---> THIS SHOULD NOT BE CALLED\n";
 
 }
 

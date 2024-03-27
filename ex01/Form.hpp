@@ -7,7 +7,7 @@
 class Bureaucrat;
 
 class Form{
-    private:
+    private://not const becuase of copy constructor, but unchangable
         std::string name;
         bool isSigned;
         int gradeToSign;
@@ -37,7 +37,6 @@ class Form{
                 }
         };
         friend std::ostream &operator<<(std::ostream &os, const Form &Form);
-
 };
 
 #endif
