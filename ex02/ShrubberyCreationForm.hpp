@@ -7,8 +7,6 @@ class ShrubberyCreationForm : public AForm
 {
 
 private:
-    int gradeToSign;
-    int gradeToExecute;
     std::string target;
 public:
     ShrubberyCreationForm();
