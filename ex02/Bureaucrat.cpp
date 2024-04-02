@@ -75,11 +75,11 @@ void Bureaucrat::DecrementGrade() {
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat) {
     (void)bureaucrat;
-    // os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << "\n";
+    os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << "\n";
     return os;
 }
 
-void Bureaucrat::signForm(Form &form)
+void Bureaucrat::signForm(AForm &form)
 {
     try
     {
@@ -90,4 +90,18 @@ void Bureaucrat::signForm(Form &form)
     {
         std::cout << name << " couldn’t sign " << form.getName() << " because " << e.what() << std::endl;
     }
+}
+
+void  Bureaucrat::executeForm(AForm const &form)
+{
+    try
+    {
+        form.execute(*this);
+        std::cout << name << " signed " << form.getName() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << name << " signed " << form.getName() << std::endl;
+    }
+    
 }

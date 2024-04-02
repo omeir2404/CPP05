@@ -19,7 +19,9 @@ public:
 
     ~ShrubberyCreationForm();
 
-    void execute(Bureaucrat const &executor)const;
+    std::string getTarget()const;
+
+    void formExecutor(Bureaucrat const &executor);
 };
 
 #endif

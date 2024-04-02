@@ -27,7 +27,38 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
     std::cout << "ShrubberyCreationForm Desctructor called\n";
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const & executor)const
+std::string	ShrubberyCreationForm::getTarget(void)const
 {
-    if (executor.getGrade() > this->getGradeToExecute())
+	return (this->target);
+}
+
+void ShrubberyCreationForm::formExecutor(Bureaucrat const & executor)
+{
+	{
+		std::ofstream outfile (this->getTarget().append("_shrubbery").c_str());
+
+		for (int i = 0; i < 5; i++)
+		{
+			outfile <<
+			"         v" << std::endl <<
+			"        >X<" << std::endl <<
+			"         A" << std::endl <<
+			"        d$b" << std::endl <<
+			"      .d\\$$b." << std::endl <<
+			"    .d$i$$\\$$b." << std::endl <<
+			"       d$$@b" << std::endl <<
+			"      d\\$$$ib" << std::endl <<
+			"    .d$$$\\$$$b" << std::endl <<
+			"  .d$$@$$$$\\$$ib." << std::endl <<
+			"      d$$i$$b" << std::endl <<
+			"     d\\$$$$@$b" << std::endl <<
+			"  .d$@$$\\$$$$$@b." << std::endl <<
+			".d$$$$i$$$\\$$$$$$b." << std::endl <<
+			"        ###" << std::endl <<
+			"        ###" << std::endl <<
+			"        ###" << std::endl <<
+		std::endl;
+		}
+		outfile.close();
+	}
 }
