@@ -32,7 +32,7 @@ std::string	ShrubberyCreationForm::getTarget(void)const
 	return (this->target);
 }
 
-void ShrubberyCreationForm::formExecutor(Bureaucrat const & executor)
+void ShrubberyCreationForm::formExecutor()const
 {
 	{
 		std::ofstream outfile (this->getTarget().append("_shrubbery").c_str());

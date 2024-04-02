@@ -21,7 +21,7 @@ public:
 
     std::string getTarget()const;
 
-    void formExecutor(Bureaucrat const &executor);
+    void formExecutor()const;
 };
 
 #endif

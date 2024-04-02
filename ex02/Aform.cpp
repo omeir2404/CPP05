@@ -39,7 +39,7 @@ AForm::~AForm()
     std::cout << "AForm destructor called";
 }
 
-std::string AForm::getName()
+std::string AForm::getName()const
 {
     return name;
 }
@@ -83,5 +83,4 @@ void AForm::execute(Bureaucrat const & executor) const{
     else if (!isSigned)
         throw(AForm::UnsignedFormException());
     formExecutor();
-    
 }
