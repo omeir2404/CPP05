@@ -1,9 +1,9 @@
-#include "Aform.hpp"
+#include "AForm.hpp"
 
 AForm::AForm() : name("default_Aform"), gradeToSign(150), gradeToExecute(150)
 {
     isSigned = false;
-    std::cout << "AForm default constructor, will be given default values";
+    // std::cout << "AForm default constructor, will be given default values";
 }
 
 AForm::AForm(const std::string name, const int gradeToSign, const int gradeToExecute)
@@ -14,7 +14,7 @@ AForm::AForm(const std::string name, const int gradeToSign, const int gradeToExe
     if (gradeToExecute < 1 || gradeToSign < 1)
         throw GradeTooHighException();
     isSigned = false;
-    std::cout << "AForm constructor called";
+    // std::cout << "AForm constructor called";
 }
 
 AForm::AForm(const AForm &copy)
@@ -24,7 +24,7 @@ AForm::AForm(const AForm &copy)
 
 AForm &AForm::operator=(const AForm &copy)
 {
-    std::cout << copy.name << "'s copy constructor called";
+    // std::cout << copy.name << "'s copy constructor called";
     if (this != &copy)
     {
         this->name = copy.name;
@@ -36,7 +36,7 @@ AForm &AForm::operator=(const AForm &copy)
 
 AForm::~AForm()
 {
-    std::cout << "AForm destructor called";
+    // std::cout << "AForm destructor called";
 }
 
 std::string AForm::getName()const
@@ -70,7 +70,6 @@ void AForm::beSigned(Bureaucrat &bureaucrat)
     if (bureaucrat.getGrade() <= gradeToSign)
     {
         isSigned = true;
-        //std::cout << bureaucrat.getName() << " signed " << name << std::endl;//is printed by calling function(signAForm)
     }
     else
     {
