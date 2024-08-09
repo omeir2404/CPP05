@@ -34,9 +34,9 @@ class Bureaucrat{
 
         void IncrementGrade();
         void DecrementGrade();
-        friend std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat);
         void signForm(AForm &form);
         void executeForm(AForm const & form);
 };
+        std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat);
 
 #endif

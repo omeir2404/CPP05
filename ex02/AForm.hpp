@@ -47,7 +47,7 @@ class AForm{
                     return "Form needs to be signed before executing!";
                 }
         };
-        friend std::ostream &operator<<(std::ostream &os, const AForm &AForm);
 };
+        std::ostream &operator<<(std::ostream &os, const AForm &AForm);
 
 #endif

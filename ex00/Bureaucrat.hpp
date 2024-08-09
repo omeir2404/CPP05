@@ -30,8 +30,8 @@ class Bureaucrat{
 
         void IncrementGrade();
         void DecrementGrade();
-        friend std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat);
 
 };
+        std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat);
 
 #endif

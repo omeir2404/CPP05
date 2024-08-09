@@ -36,7 +36,7 @@ class Form{
                     return "Grade too Low!";
                 }
         };
-        friend std::ostream &operator<<(std::ostream &os, const Form &Form);
 };
+        std::ostream &operator<<(std::ostream &os, const Form &Form);
 
 #endif
