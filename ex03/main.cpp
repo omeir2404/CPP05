@@ -10,7 +10,7 @@ int main()
 try {
     Intern someRandomIntern;
     AForm *rrf;
-    rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+    rrf = someRandomIntern.makeForm("RobotomyRequestForm", "Bender");
     delete rrf;
 } catch (const Intern::FormNotFoundException& e) {
     std::cerr << e.what() << '\n';

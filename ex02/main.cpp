@@ -8,14 +8,16 @@
 int main()
 {
     // Create a bureaucrat
-    Bureaucrat bureaucrat("John Doe", 100);
+    Bureaucrat bureaucrat("John Doe", 5);
 
     // Create a ShrubberyCreationForm
     ShrubberyCreationForm shrubberyForm("home");
 
+
     // Test executing ShrubberyCreationForm
     try
     {
+        shrubberyForm.beSigned(bureaucrat);
         shrubberyForm.execute(bureaucrat);
         std::cout << "ShrubberyCreationForm executed successfully" << std::endl;
     }
@@ -30,6 +32,7 @@ int main()
     // Test executing RobotomyRequestForm
     try
     {
+        robotomyForm.beSigned(bureaucrat);
         robotomyForm.execute(bureaucrat);
         std::cout << "RobotomyRequestForm executed successfully" << std::endl;
     }
@@ -44,6 +47,20 @@ int main()
     // Test executing PresidentialPardonForm
     try
     {
+        pardonForm.beSigned(bureaucrat);
+        pardonForm.execute(bureaucrat);
+        std::cout << "PresidentialPardonForm executed successfully" << std::endl;
+    }
+    catch (const std::exception &e)
+    {
+        std::cout << "Error executing PresidentialPardonForm: " << e.what() << std::endl;
+    }
+
+    bureaucrat.DecrementGrade();
+//now it should not execute!!
+    try
+    {
+        pardonForm.beSigned(bureaucrat);
         pardonForm.execute(bureaucrat);
         std::cout << "PresidentialPardonForm executed successfully" << std::endl;
     }
