@@ -20,4 +20,7 @@ fclean:		clean
 
 re:			fclean $(NAME)
 
+mem: re	
+	valgrind ./ex01
+
 .PHONY:	all clean fclean re

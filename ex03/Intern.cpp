@@ -5,6 +5,7 @@
 
 Intern::Intern()
 {
+
 }
 
 Intern::Intern(const Intern &other)
@@ -24,6 +25,7 @@ Intern &Intern::operator=(const Intern &other)
 
 AForm *Intern::makeForm(std::string formName, std::string target)
 {
+    std::string formNames[] = {"robotomy request", "presidential pardon", "shrubbery creation"}; 
     AForm *forms[] = {
         new RobotomyRequestForm(target),
         new PresidentialPardonForm(target),
@@ -31,11 +33,25 @@ AForm *Intern::makeForm(std::string formName, std::string target)
 
     for (int i = 0; i < 3; i++)
     {
-        if (formName == forms[i]->getName())
+        if (formName == forms[i]->getName() || formName == formNames[i])
         {
             std::cout << "Intern creates " << formName << std::endl;
+            // Delete the unused forms
+            for (int j = 0; j < 3; j++)
+            {
+                if (i != j)
+                {
+                    delete forms[j];
+                }
+            }
             return forms[i];
         }
     }
+
+    for (int i = 0; i < 3; i++)
+    {
+        delete forms[i];
+    }
+
     throw FormNotFoundException();
 }

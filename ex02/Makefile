@@ -18,7 +18,7 @@ run:		$(NAME)
 			./$(NAME)
 
 fclean:		clean
-			rm -f $(NAME)
+			rm -f $(NAME) home_shrubbery
 
 re:			fclean $(NAME)
 

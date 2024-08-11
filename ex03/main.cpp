@@ -9,9 +9,9 @@ int main()
 {
 try {
     Intern someRandomIntern;
-    AForm *rrf;
-    rrf = someRandomIntern.makeForm("RobotomyRequestForm", "Bender");
-    delete rrf;
+    AForm *formA;
+    formA = someRandomIntern.makeForm("RobotomyRequestForm", "Bender");
+    delete formA;
 } catch (const Intern::FormNotFoundException& e) {
     std::cerr << e.what() << '\n';
 }

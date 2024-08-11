@@ -8,6 +8,8 @@
 #include "RobotomyRequestForm.hpp"
 
 class Intern {
+private:
+
 public:
     Intern();
     Intern(const Intern& other);
@@ -26,7 +28,7 @@ public:
     }
 };
 
-private:
+
 
 };
 
